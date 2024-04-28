@@ -11,7 +11,7 @@ int main()
     myList.push(1.0);
     myList.push(2.0);
     myList.push(3.0);
-
+    myList.insert(0, 100);
     myList.insert(0, 100);
 
     // Выводим список

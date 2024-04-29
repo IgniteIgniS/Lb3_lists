@@ -50,6 +50,11 @@ void linked_list::push(double value)
 
 void linked_list::insert(int index, double value)
 {
+	if (index < 0 || index > size) 
+	{
+		std::cout << "Invalid index" << std::endl;
+		return;
+	}
 	if (index == 0)
 	{
 		unshift(value);
@@ -71,6 +76,10 @@ void linked_list::insert(int index, double value)
 
 void linked_list::remove(int index)
 {
+	if (index < 0 || index > size) {
+		std::cout << "Invalid index" << std::endl;
+		return;
+	}
 	if (index == 0)
 	{
 		Node* temp = head;
@@ -85,14 +94,9 @@ void linked_list::remove(int index)
 		{
 			previous = previous->pNext;
 		}
-
-
 		Node* toDelete = previous->pNext;
-
 		previous->pNext = toDelete->pNext;
-
 		delete toDelete;
-
 		size--;
 	}
 }
